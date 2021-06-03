@@ -1,0 +1,37 @@
+func count_to(maxcnt) {
+  i = 0
+  while i < maxcnt {
+    i += 1
+    print(i)
+  }
+}
+
+func sum(list) {
+  ind = 0
+  sum = 0
+  while ind < list:len() {
+    sum += list(ind)
+    "thats right lists are indexed with ()"
+    "deal with it"
+    ind += 1
+  }
+  return sum
+}
+
+max = num(input("How high to count to? "))
+count_to(max)
+print("Done counting!")
+
+num_count = num(input("How many numbers to add? "))
+lst = []
+ind = 0
+while (ind < num_count) {
+  ind += 1
+  lst:append(num(input(ind,"th number: ")))
+}
+
+print("Total: ", sum(lst))
+
+print()
+print("Also, exceptions exist!\n")
+[]:pop()
