@@ -1,0 +1,32 @@
+func parse_add(str, ind) {
+  l, ind = parse_mul(str, ind)
+  if (str[ind] == "+") {
+    r, ind = parse_add(str, ind)
+    return "+", r, l
+  }
+  else {
+    return l
+  }
+}
+
+func parse_mul(str, ind) {
+  l, ind = parse_num(str, ind)
+  if (str[ind] == "+") {
+    r, ind = parse_mul(str, ind)
+    return "*", r, l
+  }
+  else {
+    return l
+  }
+}
+
+func parse_num(str, ind) {
+  res = ""
+  while (str[ind] <| "0123456789") {
+    res += str[ind]
+    ind += 1
+  }
+  return num(res)
+}
+
+print(parse_add(input("Enter an expression")))
